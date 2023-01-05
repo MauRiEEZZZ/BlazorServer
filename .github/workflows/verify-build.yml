@@ -1,0 +1,47 @@
+name: Verify Build
+
+on:
+  workflow_dispatch:
+
+  pull_request:
+    paths:
+      - src/BlazorServer/**
+    branches:
+      - develop
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  Verify-Publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "7.0.x"
+
+      - name: Dotnet Restore
+        run: dotnet restore ./src/BlazorServer
+
+      - name: Dotnet Build
+        run: dotnet build --configuration Release ./src/BlazorServer
+
+#      - name: Dotnet Test
+#        run: dotnet test ./tests/BlazorServer
+
+      - name: Dotnet Publish
+        run: dotnet publish ./src/BlazorServer -c Release -o ${{env.DOTNET_ROOT}}/publishfiles
+
+      - name: Upload Build Results
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: buildresults
+          path: ${{env.DOTNET_ROOT}}/publishfiles
+          retention-days: 1
