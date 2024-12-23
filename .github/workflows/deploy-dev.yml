@@ -19,16 +19,16 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: gittools/actions/gitversion/setup@v0.9.13
+      - uses: gittools/actions/gitversion/setup@v3
         name: Install GitVersion
         with:
           versionSpec: '5.x'
 
-      - uses: gittools/actions/gitversion/execute@v0.9.13
+      - uses: gittools/actions/gitversion/execute@v3
         name: Determine Version
         id: gitversion
 
@@ -47,17 +47,17 @@ jobs:
 
     # checkout the repo
     - name: 'Checkout Github Action'
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: 'Login Azure'
-      uses: azure/login@v1
+      uses: azure/login@v2
       with:
         client-id: ${{ secrets.CLIENT_ID }}
         tenant-id: ${{ secrets.TENANT_ID }}
         subscription-id: ${{ secrets.SUB_ID }}
 
     - name: Set up .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
 
@@ -74,7 +74,7 @@ jobs:
       run: dotnet publish ./src/BlazorServer -c Release -o ${{env.DOTNET_ROOT}}/publishfiles
 
     - name: Azure webapp deploy
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@v3
       with:
         app-name: meaurisserver
         package: ${{env.DOTNET_ROOT}}/publishfiles
