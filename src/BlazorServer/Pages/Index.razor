@@ -2,8 +2,48 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div class="grid-ding">
+    <div class="eerste-ding">
+        <div class="card" id="start-leader-line">
+            <div class="card-header">
+                <h3 class="card-title">Card 1</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Some quick example text </p>
+            </div>
+        </div>
+    </div>
+    <div class="tweede-ding">
+        <div class="card" id="end-leader-line">
+            <div class="card-header">
+                <h3 class="card-title">Card 2</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+        
+    </div>
+    <div class="derde-ding">
+        <div class="card" id="end-leader-line2">
+            <div class="card-header">
+                <h3 class="card-title">Card 3</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Some quick example text </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Card title 4</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+@* <AddLeaderLines StartID="start-leader-line" EndID="end-leader-line" Options="@(new AddLeaderLines.LeaderLineOptions(Dash: true))" /> *@
+@* <AddLeaderLines  *@
+@*     StartID="start-leader-line" EndID="end-leader-line2"  *@
+@*     Options="@(new AddLeaderLines.LeaderLineOptions(Dash: true))" /> *@

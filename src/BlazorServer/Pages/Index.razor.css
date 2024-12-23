@@ -1,0 +1,23 @@
+.grid-ding {
+    display: flex;
+    gap: 123px;
+    padding-bottom: 80px;
+    justify-content: center;
+}
+.eerste-ding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tweede-ding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.derde-ding {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
