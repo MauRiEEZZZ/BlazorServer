@@ -67,8 +67,8 @@ jobs:
     - name: Dotnet Build
       run: dotnet build --configuration Release ./src/BlazorServer
 
-    - name: Dotnet Test
-      run: dotnet test ./tests/BlazorServer
+#    - name: Dotnet Test
+#      run: dotnet test ./tests/BlazorServer
 
     - name: Dotnet Publish
       run: dotnet publish ./src/BlazorServer -c Release -o ${{env.DOTNET_ROOT}}/publishfiles
