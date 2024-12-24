@@ -73,12 +73,12 @@ jobs:
     - name: Dotnet Publish
       run: dotnet publish ./src/BlazorServer -c Release -o ${{env.DOTNET_ROOT}}/publishfiles
 
-    - name: Azure webapp deploy
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: meaurisserver
-        package: ${{env.DOTNET_ROOT}}/publishfiles
-
+#    - name: Azure webapp deploy
+#      uses: azure/webapps-deploy@v3
+#      with:
+#        app-name: meaurisserver
+#        package: ${{env.DOTNET_ROOT}}/publishfiles
+#
     - name: Azure webapp deploy
       uses: azure/webapps-deploy@v3
       with:
