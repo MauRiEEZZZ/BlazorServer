@@ -88,7 +88,7 @@ jobs:
     - name: Azure webapp deploy
       uses: azure/webapps-deploy@v3
       with:
-        app-name: newwebdeployment24dec
-        slot-name: 'production'
+        app-name: newwebdeployment24dec-deploy
+        slot-name: 'deploy'
         package: ${{env.DOTNET_ROOT}}/publishfiles
   
