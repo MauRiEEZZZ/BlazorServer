@@ -84,3 +84,11 @@ jobs:
       with:
         app-name: newdeployment23dec2024
         package: ${{env.DOTNET_ROOT}}/publishfiles
+
+    - name: Azure webapp deploy
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: newwebdeployment24dec
+        slot-name: 'deploy'
+        package: ${{env.DOTNET_ROOT}}/publishfiles
+  
