@@ -89,6 +89,5 @@ jobs:
       uses: azure/webapps-deploy@v3
       with:
         app-name: newwebdeployment24dec-deploy
-        slot-name: 'deploy'
         package: ${{env.DOTNET_ROOT}}/publishfiles
   
